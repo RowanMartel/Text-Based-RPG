@@ -9,6 +9,8 @@ namespace Text_Based_RPG
     internal class Player : GameCharacter
     {
         EnemyManager enemyManager;
+        NPCManager npcManager;
+        int coins;
 
         public Player(int x, int y, Map map, AttackMap attackMap, Render render) : base(x, y, map, attackMap, render)
         {
@@ -23,6 +25,7 @@ namespace Text_Based_RPG
             waterWalking = false;
             health = Global.PLAYER_HP;
             maxHealth = Global.PLAYER_HP;
+            coins = Global.PLAYER_START_COINS;
         }
 
         public override void Update()
@@ -66,6 +69,12 @@ namespace Text_Based_RPG
             base.Attack(attackShape);
 
             enemyManager.DamageEnemies();
+            npcManager.NPCInteract();
+        }
+
+        public void GetNPCManager(NPCManager npcManager)
+        {
+            this.npcManager = npcManager;
         }
 
         public void GetEnemyManager(EnemyManager enemyManager)
@@ -82,6 +91,25 @@ namespace Text_Based_RPG
         {
             base.Die();
             GameManager.gameOver = true;
+        }
+
+        public int GetCoins()
+        {
+            return this.coins;
+        }
+
+        public void GiveCoins(int amount)
+        {
+            coins = amount + coins;
+        }
+
+        public bool TakeCoins(int amount)
+        {
+            if (coins - amount < 0)
+                return false;
+
+            coins = coins - amount;
+            return true;
         }
     }
 }

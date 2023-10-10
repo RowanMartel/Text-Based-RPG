@@ -22,13 +22,26 @@ namespace Text_Based_RPG
 
         // character constants
         public const char PLAYER_CHAR = '@';
+        public const char SHOP_CHAR = '$';
+        public const char GAMBLER_CHAR = '¢';
+        public const char QUEST_CHAR = '?';
+        public const char FISHERMAN_CHAR = 'F';
+        public const char MAYOR_CHAR = 'M';
+        public const char SOLDIER_CHAR = 'A';
+        public const char HERMIT_CHAR = 'H';
+        public const char GRASSGUY_CHAR = 'G';
+        public const char SANDGUY_CHAR = 'S';
+        public const char DOCKGUY_CHAR = 'D';
+        public const char SIGN_CHAR = 'P';
+        public const char JOURNAL_CHAR = 'J'; 
         public const char ROAMER_CHAR = '0';
         public const char CHARGER_CHAR = 'V';
         public const char LAVA_CHAR = '₤';
-        public const char SWIMMER_CHAR = 'S';
+        public const char SWIMMER_CHAR = 'W';
         public const char ELITE_CHAR = '‼';
         public const char HEALTH_CHAR = '♥';
         public const char HEALTH_CHAR2 = '+';
+        public const char COINBAG_CHAR = 'C';
         public const char SPEAR_CHAR = '↑';
         public const char BOMB_CHAR = 'B';
         public const char BOAT_CHAR = 'U';
@@ -44,6 +57,9 @@ namespace Text_Based_RPG
         public const char MAP_WOOD = '=';
         public const char MAP_WALL = '▓';
         public const char MAP_HOLE = 'n';
+        public const char MAP_HOLE_FALSE = 'f';
+        public const char MAP_SHOP = 'x';
+        public const char MAP_SHOP_R = 'r';
 
         // health constants
         public const int PLAYER_HP = 10;
@@ -52,6 +68,36 @@ namespace Text_Based_RPG
         public const int LAVA_HP = 1;
         public const int SWIMMER_HP = 3;
         public const int ELITE_HP = 8;
+
+        // coin constants
+        public const int PLAYER_START_COINS = 5;
+        public const int COINBAG_RANGE = 5;
+        public const int COINBAG_MIN = 3;
+        public const int HEALTH_COST = 4;
+        public const int HEALTH_COST2 = 8;
+        public const int SPEAR_COST = 15;
+        public const int BOMB_COST = 60;
+        public const int BOAT_COST = 40;
+        public const int HULA_COST = 20;
+        public const int GEM_COST = 100;
+        public const int COINBAG_COST = 5;
+
+        // quest char contants
+        public const char UNACCEPTED_QUEST = '?';
+        public const char ACCEPTED_QUEST = '?';
+        public const char NOT_TURNED_IN_QUEST = '!';
+        public const char RANDOM_QUEST_CHAR = 'R';
+        public const char GIVE_HEALTH_QUEST_CHAR = 'H';
+        public const char GIVE_SPEAR_QUEST_CHAR = 'S';
+        public const char GIVE_HULA_QUEST_CHAR = 'O';
+
+        // quest reward contants
+        public const int GIVE_HEALTH_QUEST_REWARD_RANGE = 4;
+        public const int GIVE_HEALTH_QUEST_REWARD_MIN = 5;
+        public const int GIVE_SPEAR_QUEST_REWARD_RANGE = 6;
+        public const int GIVE_SPEAR_QUEST_REWARD_MIN = 13;
+        public const int GIVE_HULA_QUEST_REWARD_RANGE = 6;
+        public const int GIVE_HULA_QUEST_REWARD_MIN = 13;
 
         // move-at constants
         public const int ROAMER_MOVEAT = 2;
@@ -63,7 +109,7 @@ namespace Text_Based_RPG
         // strength constants
         public const int PLAYER_STRENGTH = 1;
         public const int ROAMER_STRENGTH = 1;
-        public const int CHARGER_STRENGTH = 2;
+        public const int CHARGER_STRENGTH = 3;
         public const int LAVA_STRENGTH = 3;
         public const int SWIMMER_STRENGTH = 2;
         public const int ELITE_STRENGTH = 4;
@@ -72,8 +118,8 @@ namespace Text_Based_RPG
         public static Random random = new Random();
 
         // player starting position
-        public const int START_X = 74;
-        public const int START_Y = 36;
+        public const int START_X = 54;
+        public const int START_Y = 39;
 
         // camera radius
         public const int CAMERA_RADIUS = 10;

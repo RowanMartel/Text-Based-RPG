@@ -13,9 +13,20 @@ namespace Text_Based_RPG
         private Player player;
         private Render render;
 
+        private enum ShopState
+        {
+            Field,
+            NonRestock,
+            Restocks
+        }
+
         private char character;
 
         private ConsoleColor color;
+
+        private int cost;
+
+        private bool aboutToBuy = false;
 
         private int x, y;
 
@@ -24,7 +35,7 @@ namespace Text_Based_RPG
         private ItemTypeClass.ItemType Type;
         private string name;
 
-        public Item(char character, ConsoleColor color, int x, int y, ItemTypeClass.ItemType Type, Render render, AttackMap attackMap, Map map, Player player, string name)
+        public Item(char character, ConsoleColor color, int x, int y, ItemTypeClass.ItemType Type, Render render, AttackMap attackMap, Map map, Player player, string name, int cost)
         {
             this.character = character;
             this.color = color;
@@ -36,25 +47,13 @@ namespace Text_Based_RPG
             this.map = map;
             this.player = player;
             this.name = name;
+            this.cost = cost;
             
             collected = false;
 
             if (Type == ItemTypeClass.ItemType.Gem)
                 hidden = true;
             else hidden = false;
-        }
-
-        public void GetMap(Map map)
-        {
-            this.map = map;
-        }
-        public void GetAttackMap(AttackMap attackMap)
-        {
-            this.attackMap = attackMap;
-        }
-        public void GetPlayer(Player player)
-        {
-            this.player = player;
         }
 
         public void Draw()
@@ -70,12 +69,60 @@ namespace Text_Based_RPG
                 return;
             if (attackMap.IsAttack(x, y))
                 if (attackMap.PlayerAttackCheck(x, y))
-                    Collect();
+                    switch (map.GetChar(x, y))
+                    {
+                        case 'x':
+                            Collect(ShopState.NonRestock); return;
+                        case 'r':
+                            Collect(ShopState.Restocks); return;
+                        default:
+                            Collect(ShopState.Field); break;
+                    }
+
+            aboutToBuy = false;
         }
 
-        private void Collect()
+        private void Collect(ShopState shopState)
         {
-            GameManager.playerUI.AddEvent("Player collected a " + name);
+            int coinAmount = 0;
+            if (shopState == ShopState.NonRestock || shopState == ShopState.Restocks)
+            {
+                if (aboutToBuy == true)
+                    if (player.GetCoins() >= cost)
+                    {
+                        if (Type == ItemTypeClass.ItemType.CoinBag)
+                        {
+                            coinAmount = Global.random.Next(Global.COINBAG_RANGE) + Global.COINBAG_MIN;
+                            GameManager.playerUI.AddEvent("Player bought a " + name + " worth " + coinAmount + " coins");
+                        }
+                        else
+                            GameManager.playerUI.AddEvent("Player bought a " + name);
+                        player.TakeCoins(cost);
+                    }else
+                    {
+                        GameManager.playerUI.AddEvent("You wanted the " + name + ", but didn't have enough");
+                        return;
+                    }
+                else
+                {
+                    if (shopState == ShopState.Restocks)
+                        GameManager.playerUI.AddEvent("Try to buy the " + name + " worth " + cost + " coins? (Restocks)");
+                    else
+                        GameManager.playerUI.AddEvent("Try to buy the " + name + " worth " + cost + " coins? (Limited)");
+                    aboutToBuy = true;
+                    return;
+                }
+
+            }else
+
+                if (Type == ItemTypeClass.ItemType.CoinBag)
+                {
+                    coinAmount = Global.random.Next(Global.COINBAG_RANGE) + Global.COINBAG_MIN;
+                    GameManager.playerUI.AddEvent("Player collected a " + name + " worth " + coinAmount + " coins");
+                }else
+                    GameManager.playerUI.AddEvent("Player collected a " + name);
+
+
             switch (Type)
             {
                 case ItemTypeClass.ItemType.HealthPickup:
@@ -99,8 +146,15 @@ namespace Text_Based_RPG
                 case ItemTypeClass.ItemType.Gem:
                     GameManager.gameWin = true;
                     break;
+                case ItemTypeClass.ItemType.CoinBag:
+                    player.GiveCoins(coinAmount);
+                    break;
             }
-            collected = true;
+
+            if (shopState == ShopState.Restocks) {
+                aboutToBuy = false; return;
+            }else
+                collected = true;
         }
 
         public void Unhide()
@@ -108,7 +162,7 @@ namespace Text_Based_RPG
             if (hidden)
             {
                 hidden = false;
-                GameManager.playerUI.AddEvent("A " + name + " was revealed!");
+                GameManager.playerUI.AddEvent("You killed all the Elites!");
             }
         }
     }

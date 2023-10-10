@@ -133,6 +133,11 @@ namespace Text_Based_RPG
             dead = true;
         }
 
+        public int GetAttackShape()
+        {
+            return attackShape;
+        }
+
         public void ChangeAttackShape(int newShape)
         {
             attackShape = newShape;
@@ -146,10 +151,11 @@ namespace Text_Based_RPG
                 health = maxHealth;
         }
 
-        public virtual void TakeDamage(int damageAmount)
+        public virtual void TakeDamage(int damageAmount, bool displayDamage = true)
         {
             if (dead) return;
-            GameManager.playerUI.AddEvent(name + " took " + damageAmount + " damage!");
+            if (displayDamage)
+                GameManager.playerUI.AddEvent(name + " took " + damageAmount + " damage!");
             health -= damageAmount;
             if (health <= 0)
             {
