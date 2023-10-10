@@ -36,19 +36,19 @@ namespace Text_Based_RPG
 
             switch (attackShape)
             {
-                case Global.CROSS_ATTACK:
+                case Constants.CROSS_ATTACK:
                     crossAttack(x, y, currentAttack);
                     break;
-                case Global.SPACE_ATTACK:
+                case Constants.SPACE_ATTACK:
                     spaceAttack(x, y, currentAttack);
                     break;
-                case Global.LONG_ATTACK:
+                case Constants.LONG_ATTACK:
                     longAttack(x, y, currentAttack);
                     break;
-                case Global.RING_ATTACK:
+                case Constants.RING_ATTACK:
                     ringAttack(x, y, currentAttack);
                     break;
-                case Global.X_ATTACK:
+                case Constants.X_ATTACK:
                     xAttack(x, y, currentAttack);
                     break;
                 default:
@@ -97,7 +97,7 @@ namespace Text_Based_RPG
             {
                 for (int j = 0; j < attacks.GetLength(1); j++)
                 {
-                    AddAttack(j, i, 0, Global.SPACE_ATTACK, "bomb");
+                    AddAttack(j, i, 0, Constants.SPACE_ATTACK, "bomb");
                 }
             }
         }

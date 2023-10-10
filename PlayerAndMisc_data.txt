@@ -1,0 +1,7 @@
+Player Character: @
+Start X Pos: 54
+Start Y Pos: 39
+
+Camera Radius: 10
+
+Event Log Length: 7

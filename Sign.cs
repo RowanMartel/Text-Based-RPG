@@ -12,7 +12,7 @@ namespace Text_Based_RPG
         {
             health = 1;
             maxHealth = 1;
-            character = Global.SIGN_CHAR;
+            character = Constants.SIGN_CHAR;
             this.Type = type;
             name = "Shop Sign";
         }

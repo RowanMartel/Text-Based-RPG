@@ -25,10 +25,10 @@ namespace Text_Based_RPG
         {
             x = player.GetPos()[0];
             y = player.GetPos()[1];
-            if (x <= Global.CAMERA_RADIUS - 2) x = Global.CAMERA_RADIUS - 1;
-            if (y <= Global.CAMERA_RADIUS - 2) y = Global.CAMERA_RADIUS - 1;
-            if (x > map.Width() - Global.CAMERA_RADIUS - 1) x = map.Width() - Global.CAMERA_RADIUS - 1;
-            if (y >= map.Height() - Global.CAMERA_RADIUS) y = map.Height() - Global.CAMERA_RADIUS - 1;
+            if (x <= Constants.CAMERA_RADIUS - 2) x = Constants.CAMERA_RADIUS - 1;
+            if (y <= Constants.CAMERA_RADIUS - 2) y = Constants.CAMERA_RADIUS - 1;
+            if (x > map.Width() - Constants.CAMERA_RADIUS - 1) x = map.Width() - Constants.CAMERA_RADIUS - 1;
+            if (y >= map.Height() - Constants.CAMERA_RADIUS) y = map.Height() - Constants.CAMERA_RADIUS - 1;
         }
 
         public int[] GetPos()

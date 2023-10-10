@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Global.JOURNAL_CHAR;
+            character = Constants.JOURNAL_CHAR;
             this.Type = type;
             name = "Journal";
         }

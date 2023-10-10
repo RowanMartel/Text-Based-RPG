@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Charger(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Global.CHARGER_HP;
-            maxHealth = Global.CHARGER_HP;
-            moveAt = Global.CHARGER_MOVEAT;
-            character = Global.CHARGER_CHAR;
-            strength = Global.CHARGER_STRENGTH;
-            attackShape = Global.SPACE_ATTACK;
+            health = Constants.CHARGER_HP;
+            maxHealth = Constants.CHARGER_HP;
+            moveAt = Constants.CHARGER_MOVEAT;
+            character = Constants.CHARGER_CHAR;
+            strength = Constants.CHARGER_STRENGTH;
+            attackShape = Constants.SPACE_ATTACK;
             this.Type = type;
             name = type.ToString();
             kamikaze = true;

@@ -1,0 +1,12 @@
+Characters:
+Grass: `
+Water: ~
+Mountain: ^
+Forest: *
+Sand: "
+Wood: =
+Wall: ▓
+Hole: n
+False Hole: f
+Shop: x
+Restocking Shop: r

@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Global.DOCKGUY_CHAR;
+            character = Constants.DOCKGUY_CHAR;
             this.Type = type;
             name = "Dock Guy";
         }

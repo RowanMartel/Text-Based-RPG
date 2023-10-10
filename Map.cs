@@ -27,37 +27,37 @@ namespace Text_Based_RPG
                 {
                     switch (map[i, j])
                     {
-                        case Global.MAP_GRASS:
+                        case Constants.MAP_GRASS:
                             render.ChangeSpace(map[i, j], ConsoleColor.Green, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_SAND:
+                        case Constants.MAP_SAND:
                             render.ChangeSpace(map[i, j], ConsoleColor.Yellow, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_FOREST:
+                        case Constants.MAP_FOREST:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkGreen, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_MOUNTAIN:
+                        case Constants.MAP_MOUNTAIN:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkGray, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_WATER:
+                        case Constants.MAP_WATER:
                             render.ChangeSpace(map[i, j], ConsoleColor.Blue, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_WOOD:
+                        case Constants.MAP_WOOD:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_WALL:
+                        case Constants.MAP_WALL:
                             render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.DarkGray, j, i);
                             break;
-                        case Global.MAP_HOLE:
+                        case Constants.MAP_HOLE:
                             render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_HOLE_FALSE:
+                        case Constants.MAP_HOLE_FALSE:
                             render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_SHOP:
+                        case Constants.MAP_SHOP:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
                             break;
-                        case Global.MAP_SHOP_R:
+                        case Constants.MAP_SHOP_R:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
                             break;
                     }
@@ -70,20 +70,20 @@ namespace Text_Based_RPG
             {
                 switch (map[y, x])
                 {
-                    case Global.MAP_GRASS:
-                    case Global.MAP_SAND:
-                    case Global.MAP_FOREST:
-                    case Global.MAP_WOOD:
-                    case Global.MAP_SHOP:
-                    case Global.MAP_SHOP_R:
-                    case Global.MAP_HOLE_FALSE:
+                    case Constants.MAP_GRASS:
+                    case Constants.MAP_SAND:
+                    case Constants.MAP_FOREST:
+                    case Constants.MAP_WOOD:
+                    case Constants.MAP_SHOP:
+                    case Constants.MAP_SHOP_R:
+                    case Constants.MAP_HOLE_FALSE:
                         return false;
-                    case Global.MAP_WATER:
+                    case Constants.MAP_WATER:
                         if (waterWalking) return false;
                         return true;
-                    case Global.MAP_MOUNTAIN:
-                    case Global.MAP_WALL:
-                    case Global.MAP_HOLE:
+                    case Constants.MAP_MOUNTAIN:
+                    case Constants.MAP_WALL:
+                    case Constants.MAP_HOLE:
                     default:
                         return true;
                 }

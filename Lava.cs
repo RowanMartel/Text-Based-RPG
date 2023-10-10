@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Lava(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Global.LAVA_HP;
-            maxHealth = Global.LAVA_HP;
-            moveAt = Global.LAVA_MOVEAT;
-            character = Global.LAVA_CHAR;
-            strength = Global.LAVA_STRENGTH;
-            attackShape = Global.RING_ATTACK;
+            health = Constants.LAVA_HP;
+            maxHealth = Constants.LAVA_HP;
+            moveAt = Constants.LAVA_MOVEAT;
+            character = Constants.LAVA_CHAR;
+            strength = Constants.LAVA_STRENGTH;
+            attackShape = Constants.RING_ATTACK;
             this.Type = type;
             name = type.ToString();
         }

@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Global.GRASSGUY_CHAR;
+            character = Constants.GRASSGUY_CHAR;
             this.Type = type;
             name = "Grass Guy";
         }

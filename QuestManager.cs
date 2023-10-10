@@ -55,28 +55,28 @@ namespace Text_Based_RPG
                 {
                     switch (questMap[i, j])
                     {
-                        case Global.RANDOM_QUEST_CHAR:
-                            switch (Global.random.Next(3))
+                        case Constants.RANDOM_QUEST_CHAR:
+                            switch (Constants.random.Next(3))
                             {
                                 case 0:
-                                    AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Global.random.Next(Global.GIVE_HEALTH_QUEST_REWARD_RANGE) + Global.GIVE_HEALTH_QUEST_REWARD_MIN);
+                                    AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Constants.random.Next(Constants.GIVE_HEALTH_QUEST_REWARD_RANGE) + Constants.GIVE_HEALTH_QUEST_REWARD_MIN);
                                     break;
                                 case 1:
-                                    AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Global.random.Next(Global.GIVE_SPEAR_QUEST_REWARD_RANGE) + Global.GIVE_SPEAR_QUEST_REWARD_MIN);
+                                    AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Constants.random.Next(Constants.GIVE_SPEAR_QUEST_REWARD_RANGE) + Constants.GIVE_SPEAR_QUEST_REWARD_MIN);
                                     break;
                                 case 2:
-                                    AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Global.random.Next(Global.GIVE_HULA_QUEST_REWARD_RANGE) + Global.GIVE_HULA_QUEST_REWARD_MIN);
+                                    AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Constants.random.Next(Constants.GIVE_HULA_QUEST_REWARD_RANGE) + Constants.GIVE_HULA_QUEST_REWARD_MIN);
                                     break;
                             }
                             break;
-                        case Global.GIVE_HEALTH_QUEST_CHAR:
-                            AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Global.random.Next(Global.GIVE_HEALTH_QUEST_REWARD_RANGE) + Global.GIVE_HEALTH_QUEST_REWARD_MIN);
+                        case Constants.GIVE_HEALTH_QUEST_CHAR:
+                            AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Constants.random.Next(Constants.GIVE_HEALTH_QUEST_REWARD_RANGE) + Constants.GIVE_HEALTH_QUEST_REWARD_MIN);
                             break;
-                        case Global.GIVE_SPEAR_QUEST_CHAR:
-                            AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Global.random.Next(Global.GIVE_SPEAR_QUEST_REWARD_RANGE) + Global.GIVE_SPEAR_QUEST_REWARD_MIN);
+                        case Constants.GIVE_SPEAR_QUEST_CHAR:
+                            AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Constants.random.Next(Constants.GIVE_SPEAR_QUEST_REWARD_RANGE) + Constants.GIVE_SPEAR_QUEST_REWARD_MIN);
                             break;
-                        case Global.GIVE_HULA_QUEST_CHAR:
-                            AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Global.random.Next(Global.GIVE_HULA_QUEST_REWARD_RANGE) + Global.GIVE_HULA_QUEST_REWARD_MIN);
+                        case Constants.GIVE_HULA_QUEST_CHAR:
+                            AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Constants.random.Next(Constants.GIVE_HULA_QUEST_REWARD_RANGE) + Constants.GIVE_HULA_QUEST_REWARD_MIN);
                             break;
                     }
                 }

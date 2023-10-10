@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_Based_RPG
 {
-    internal class Global
+    internal class Constants
     {
         // item value constants
         public const int HEAL_SMALL = 2;
@@ -82,7 +82,7 @@ namespace Text_Based_RPG
         public const int GEM_COST = 100;
         public const int COINBAG_COST = 5;
 
-        // quest char contants
+        // quest char constants
         public const char UNACCEPTED_QUEST = '?';
         public const char ACCEPTED_QUEST = '?';
         public const char NOT_TURNED_IN_QUEST = '!';
@@ -91,7 +91,7 @@ namespace Text_Based_RPG
         public const char GIVE_SPEAR_QUEST_CHAR = 'S';
         public const char GIVE_HULA_QUEST_CHAR = 'O';
 
-        // quest reward contants
+        // quest reward constants
         public const int GIVE_HEALTH_QUEST_REWARD_RANGE = 4;
         public const int GIVE_HEALTH_QUEST_REWARD_MIN = 5;
         public const int GIVE_SPEAR_QUEST_REWARD_RANGE = 6;

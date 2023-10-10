@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Swimmer(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Global.SWIMMER_HP;
-            maxHealth = Global.SWIMMER_HP;
-            moveAt = Global.SWIMMER_MOVEAT;
-            character = Global.SWIMMER_CHAR;
-            strength = Global.SWIMMER_STRENGTH;
-            attackShape = Global.CROSS_ATTACK;
+            health = Constants.SWIMMER_HP;
+            maxHealth = Constants.SWIMMER_HP;
+            moveAt = Constants.SWIMMER_MOVEAT;
+            character = Constants.SWIMMER_CHAR;
+            strength = Constants.SWIMMER_STRENGTH;
+            attackShape = Constants.CROSS_ATTACK;
             this.Type = type;
             name = type.ToString();
             waterWalking = true;
@@ -32,7 +32,7 @@ namespace Text_Based_RPG
             }
 
             // or move
-            switch (Global.random.Next(4))
+            switch (Constants.random.Next(4))
             {
                 case 0:
                     yDelta--;
