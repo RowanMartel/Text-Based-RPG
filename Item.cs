@@ -92,7 +92,7 @@ namespace Text_Based_RPG
                     {
                         if (Type == ItemTypeClass.ItemType.CoinBag)
                         {
-                            coinAmount = Constants.random.Next(Constants.COINBAG_RANGE) + Constants.COINBAG_MIN;
+                            coinAmount = Globals.random.Next(Globals.COINBAG_RANGE) + Globals.COINBAG_MIN;
                             GameManager.playerUI.AddEvent("Player bought a " + name + " worth " + coinAmount + " coins");
                         }
                         else
@@ -117,7 +117,7 @@ namespace Text_Based_RPG
 
                 if (Type == ItemTypeClass.ItemType.CoinBag)
                 {
-                    coinAmount = Constants.random.Next(Constants.COINBAG_RANGE) + Constants.COINBAG_MIN;
+                    coinAmount = Globals.random.Next(Globals.COINBAG_RANGE) + Globals.COINBAG_MIN;
                     GameManager.playerUI.AddEvent("Player collected a " + name + " worth " + coinAmount + " coins");
                 }else
                     GameManager.playerUI.AddEvent("Player collected a " + name);
@@ -126,16 +126,16 @@ namespace Text_Based_RPG
             switch (Type)
             {
                 case ItemTypeClass.ItemType.HealthPickup:
-                    player.Heal(Constants.HEAL_SMALL);
+                    player.Heal(Globals.HEAL_SMALL);
                     break;
                 case ItemTypeClass.ItemType.HealthPickupLarge:
-                    player.Heal(Constants.HEAL_LARGE);
+                    player.Heal(Globals.HEAL_LARGE);
                     break;
                 case ItemTypeClass.ItemType.Spear:
-                    player.ChangeAttackShape(Constants.LONG_ATTACK);
+                    player.ChangeAttackShape(Globals.LONG_ATTACK);
                     break;
                 case ItemTypeClass.ItemType.HulaHoop:
-                    player.ChangeAttackShape(Constants.RING_ATTACK);
+                    player.ChangeAttackShape(Globals.RING_ATTACK);
                     break;
                 case ItemTypeClass.ItemType.Bomb:
                     GameManager.enemyManager.Bomb();

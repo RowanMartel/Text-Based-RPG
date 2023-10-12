@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Constants.SANDGUY_CHAR;
+            character = Globals.SANDGUY_CHAR;
             this.Type = type;
             name = "Sand Guy";
         }

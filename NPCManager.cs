@@ -75,40 +75,40 @@ namespace Text_Based_RPG
                 {
                     switch (npcMap[i, j])
                     {
-                        case Constants.QUEST_CHAR:
+                        case Globals.QUEST_CHAR:
                             AddNPC(NPCTypeClass.NPCType.QuestDealer, j, i);
                             break;
-                        case Constants.SHOP_CHAR:
+                        case Globals.SHOP_CHAR:
                             AddNPC(NPCTypeClass.NPCType.ShopKeep, j, i);
                             break;
-                        case Constants.GAMBLER_CHAR:
+                        case Globals.GAMBLER_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Gambler, j, i);
                             break;
-                        case Constants.FISHERMAN_CHAR:
+                        case Globals.FISHERMAN_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Fisherman, j, i);
                             break;
-                        case Constants.MAYOR_CHAR:
+                        case Globals.MAYOR_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Mayor, j, i);
                             break;
-                        case Constants.SOLDIER_CHAR:
+                        case Globals.SOLDIER_CHAR:
                             AddNPC(NPCTypeClass.NPCType.RetiredSoldier, j, i);
                             break;
-                        case Constants.HERMIT_CHAR:
+                        case Globals.HERMIT_CHAR:
                             AddNPC(NPCTypeClass.NPCType.OldHermit, j, i);
                             break;
-                        case Constants.GRASSGUY_CHAR:
+                        case Globals.GRASSGUY_CHAR:
                             AddNPC(NPCTypeClass.NPCType.GrassGuy, j, i);
                             break;
-                        case Constants.SANDGUY_CHAR:
+                        case Globals.SANDGUY_CHAR:
                             AddNPC(NPCTypeClass.NPCType.SandGuy, j, i);
                             break;
-                        case Constants.DOCKGUY_CHAR:
+                        case Globals.DOCKGUY_CHAR:
                             AddNPC(NPCTypeClass.NPCType.DockGuy, j, i);
                             break;
-                        case Constants.SIGN_CHAR:
+                        case Globals.SIGN_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Sign, j, i);
                             break;
-                        case Constants.JOURNAL_CHAR:
+                        case Globals.JOURNAL_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Journal, j, i);
                             break;
                     }
@@ -119,18 +119,18 @@ namespace Text_Based_RPG
         {
             switch (npcMap[y, x])
             {
-                case Constants.QUEST_CHAR:
-                case Constants.SHOP_CHAR:
-                case Constants.GAMBLER_CHAR:
-                case Constants.FISHERMAN_CHAR:
-                case Constants.MAYOR_CHAR:
-                case Constants.SOLDIER_CHAR:
-                case Constants.HERMIT_CHAR:
-                case Constants.GRASSGUY_CHAR:
-                case Constants.SANDGUY_CHAR:
-                case Constants.DOCKGUY_CHAR:
-                case Constants.SIGN_CHAR:
-                case Constants.JOURNAL_CHAR:
+                case Globals.QUEST_CHAR:
+                case Globals.SHOP_CHAR:
+                case Globals.GAMBLER_CHAR:
+                case Globals.FISHERMAN_CHAR:
+                case Globals.MAYOR_CHAR:
+                case Globals.SOLDIER_CHAR:
+                case Globals.HERMIT_CHAR:
+                case Globals.GRASSGUY_CHAR:
+                case Globals.SANDGUY_CHAR:
+                case Globals.DOCKGUY_CHAR:
+                case Globals.SIGN_CHAR:
+                case Globals.JOURNAL_CHAR:
                     return true;
                 default: 
                     return false;

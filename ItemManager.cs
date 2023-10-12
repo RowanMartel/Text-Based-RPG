@@ -61,29 +61,29 @@ namespace Text_Based_RPG
                 {
                     switch (itemMap[i, j])
                     {
-                        case Constants.GEM_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Gem, j, i, Constants.GEM_COST);
+                        case Globals.GEM_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Gem, j, i, Globals.GEM_COST);
                             break;
-                        case Constants.BOAT_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Boat, j, i, Constants.BOAT_COST);
+                        case Globals.BOAT_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Boat, j, i, Globals.BOAT_COST);
                             break;
-                        case Constants.HULA_CHAR:
-                            AddItem(ItemTypeClass.ItemType.HulaHoop, j, i, Constants.HULA_COST);
+                        case Globals.HULA_CHAR:
+                            AddItem(ItemTypeClass.ItemType.HulaHoop, j, i, Globals.HULA_COST);
                             break;
-                        case Constants.SPEAR_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Spear, j, i, Constants.SPEAR_COST);
+                        case Globals.SPEAR_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Spear, j, i, Globals.SPEAR_COST);
                             break;
-                        case Constants.BOMB_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Bomb, j, i, Constants.BOMB_COST);
+                        case Globals.BOMB_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Bomb, j, i, Globals.BOMB_COST);
                             break;
-                        case Constants.HEALTH_CHAR:
-                            AddItem(ItemTypeClass.ItemType.HealthPickup, j, i, Constants.HEALTH_COST);
+                        case Globals.HEALTH_CHAR:
+                            AddItem(ItemTypeClass.ItemType.HealthPickup, j, i, Globals.HEALTH_COST);
                             break;
-                        case Constants.HEALTH_CHAR2:
-                            AddItem(ItemTypeClass.ItemType.HealthPickupLarge, j, i, Constants.HEALTH_COST2);
+                        case Globals.HEALTH_CHAR2:
+                            AddItem(ItemTypeClass.ItemType.HealthPickupLarge, j, i, Globals.HEALTH_COST2);
                             break;
-                        case Constants.COINBAG_CHAR:
-                            AddItem(ItemTypeClass.ItemType.CoinBag, j, i, Constants.COINBAG_COST);
+                        case Globals.COINBAG_CHAR:
+                            AddItem(ItemTypeClass.ItemType.CoinBag, j, i, Globals.COINBAG_COST);
                             break;
                     }
                 }

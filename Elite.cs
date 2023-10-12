@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Elite(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Constants.ELITE_HP;
-            maxHealth = Constants.ELITE_HP;
-            moveAt = Constants.ELITE_MOVEAT;
-            character = Constants.ELITE_CHAR;
-            strength = Constants.ELITE_STRENGTH;
-            attackShape = Constants.LONG_ATTACK;
+            health = Globals.ELITE_HP;
+            maxHealth = Globals.ELITE_HP;
+            moveAt = Globals.ELITE_MOVEAT;
+            character = Globals.ELITE_CHAR;
+            strength = Globals.ELITE_STRENGTH;
+            attackShape = Globals.LONG_ATTACK;
             this.Type = type;
             name = type.ToString();
         }
@@ -35,7 +35,7 @@ namespace Text_Based_RPG
             }
 
             // or move
-            switch (Constants.random.Next(4))
+            switch (Globals.random.Next(4))
             {
                 case 0:
                     yDelta--;

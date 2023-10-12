@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Text_Based_RPG
 {
-    internal class Constants
+    internal class Globals
     {
         // item value constants
         public const int HEAL_SMALL = 2;
@@ -126,5 +128,21 @@ namespace Text_Based_RPG
 
         // event log length
         public const int EVENT_LOG_LENGTH = 7;
+
+        public void LoadAllData()
+        {
+            // items data
+            string itemsDataPath = "Items_data";
+            string itemsJsonData = File.ReadAllText(itemsDataPath);
+            var itemsData = JsonSerializer.Deserialize<Globals>(itemsJsonData);
+
+            CopySettings(itemsData);
+        }
+
+        private void CopySettings(Globals itemsData)
+        {
+            // items data
+            HEAL_SMALL = itemsData.HEAL_SMALL;
+        }
     }
 }

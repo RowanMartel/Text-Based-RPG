@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Constants.SOLDIER_CHAR;
+            character = Globals.SOLDIER_CHAR;
             this.Type = type;
             name = "Retired Soldier";
         }
