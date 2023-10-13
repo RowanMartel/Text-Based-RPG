@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Elite(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Globals.ELITE_HP;
-            maxHealth = Globals.ELITE_HP;
-            moveAt = Globals.ELITE_MOVEAT;
-            character = Globals.ELITE_CHAR;
-            strength = Globals.ELITE_STRENGTH;
-            attackShape = Globals.LONG_ATTACK;
+            health = GameManager.globals.ELITE_HP;
+            maxHealth = GameManager.globals.ELITE_HP;
+            moveAt = GameManager.globals.ELITE_MOVEAT;
+            character = GameManager.globals.ELITE_CHAR;
+            strength = GameManager.globals.ELITE_STRENGTH;
+            attackShape = GameManager.globals.LONG_ATTACK;
             this.Type = type;
             name = type.ToString();
         }

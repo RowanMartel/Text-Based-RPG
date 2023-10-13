@@ -55,28 +55,28 @@ namespace Text_Based_RPG
                 {
                     switch (questMap[i, j])
                     {
-                        case Globals.RANDOM_QUEST_CHAR:
+                        case var _ when questMap[i, j] == GameManager.globals.RANDOM_QUEST_CHAR:
                             switch (Globals.random.Next(3))
                             {
                                 case 0:
-                                    AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Globals.random.Next(Globals.GIVE_HEALTH_QUEST_REWARD_RANGE) + Globals.GIVE_HEALTH_QUEST_REWARD_MIN);
+                                    AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Globals.random.Next(GameManager.globals.GIVE_HEALTH_QUEST_REWARD_RANGE) + GameManager.globals.GIVE_HEALTH_QUEST_REWARD_MIN);
                                     break;
                                 case 1:
-                                    AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Globals.random.Next(Globals.GIVE_SPEAR_QUEST_REWARD_RANGE) + Globals.GIVE_SPEAR_QUEST_REWARD_MIN);
+                                    AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Globals.random.Next(GameManager.globals.GIVE_SPEAR_QUEST_REWARD_RANGE) + GameManager.globals.GIVE_SPEAR_QUEST_REWARD_MIN);
                                     break;
                                 case 2:
-                                    AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Globals.random.Next(Globals.GIVE_HULA_QUEST_REWARD_RANGE) + Globals.GIVE_HULA_QUEST_REWARD_MIN);
+                                    AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Globals.random.Next(GameManager.globals.GIVE_HULA_QUEST_REWARD_RANGE) + GameManager.globals.GIVE_HULA_QUEST_REWARD_MIN);
                                     break;
                             }
                             break;
-                        case Globals.GIVE_HEALTH_QUEST_CHAR:
-                            AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Globals.random.Next(Globals.GIVE_HEALTH_QUEST_REWARD_RANGE) + Globals.GIVE_HEALTH_QUEST_REWARD_MIN);
+                        case var _ when questMap[i, j] == GameManager.globals.GIVE_HEALTH_QUEST_CHAR:
+                            AddQuest(QuestTypeClass.QuestType.GiveHealth, j, i, Globals.random.Next(GameManager.globals.GIVE_HEALTH_QUEST_REWARD_RANGE) + GameManager.globals.GIVE_HEALTH_QUEST_REWARD_MIN);
                             break;
-                        case Globals.GIVE_SPEAR_QUEST_CHAR:
-                            AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Globals.random.Next(Globals.GIVE_SPEAR_QUEST_REWARD_RANGE) + Globals.GIVE_SPEAR_QUEST_REWARD_MIN);
+                        case var _ when questMap[i, j] == GameManager.globals.GIVE_SPEAR_QUEST_CHAR:
+                            AddQuest(QuestTypeClass.QuestType.GiveSpear, j, i, Globals.random.Next(GameManager.globals.GIVE_SPEAR_QUEST_REWARD_RANGE) + GameManager.globals.GIVE_SPEAR_QUEST_REWARD_MIN);
                             break;
-                        case Globals.GIVE_HULA_QUEST_CHAR:
-                            AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Globals.random.Next(Globals.GIVE_HULA_QUEST_REWARD_RANGE) + Globals.GIVE_HULA_QUEST_REWARD_MIN);
+                        case var _ when questMap[i, j] == GameManager.globals.GIVE_HULA_QUEST_CHAR:
+                            AddQuest(QuestTypeClass.QuestType.GiveHula, j, i, Globals.random.Next(GameManager.globals.GIVE_HULA_QUEST_REWARD_RANGE) + GameManager.globals.GIVE_HULA_QUEST_REWARD_MIN);
                             break;
                     }
                 }

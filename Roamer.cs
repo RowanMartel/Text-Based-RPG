@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Roamer(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Globals.ROAMER_HP;
-            maxHealth = Globals.ROAMER_HP;
-            moveAt = Globals.ROAMER_MOVEAT;
-            character = Globals.ROAMER_CHAR;
-            strength = Globals.ROAMER_STRENGTH;
-            attackShape = Globals.CROSS_ATTACK;
+            health = GameManager.globals.ROAMER_HP;
+            maxHealth = GameManager.globals.ROAMER_HP;
+            moveAt = GameManager.globals.ROAMER_MOVEAT;
+            character = GameManager.globals.ROAMER_CHAR;
+            strength = GameManager.globals.ROAMER_STRENGTH;
+            attackShape = GameManager.globals.CROSS_ATTACK;
             this.Type = type;
             name = type.ToString();
         }

@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Globals.MAYOR_CHAR;
+            character = GameManager.globals.MAYOR_CHAR;
             this.Type = type;
             name = "Mayor";
         }

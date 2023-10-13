@@ -75,40 +75,40 @@ namespace Text_Based_RPG
                 {
                     switch (npcMap[i, j])
                     {
-                        case Globals.QUEST_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.QUEST_CHAR:
                             AddNPC(NPCTypeClass.NPCType.QuestDealer, j, i);
                             break;
-                        case Globals.SHOP_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.SHOP_CHAR:
                             AddNPC(NPCTypeClass.NPCType.ShopKeep, j, i);
                             break;
-                        case Globals.GAMBLER_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.GAMBLER_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Gambler, j, i);
                             break;
-                        case Globals.FISHERMAN_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.FISHERMAN_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Fisherman, j, i);
                             break;
-                        case Globals.MAYOR_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.MAYOR_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Mayor, j, i);
                             break;
-                        case Globals.SOLDIER_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.SOLDIER_CHAR:
                             AddNPC(NPCTypeClass.NPCType.RetiredSoldier, j, i);
                             break;
-                        case Globals.HERMIT_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.HERMIT_CHAR:
                             AddNPC(NPCTypeClass.NPCType.OldHermit, j, i);
                             break;
-                        case Globals.GRASSGUY_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.GRASSGUY_CHAR:
                             AddNPC(NPCTypeClass.NPCType.GrassGuy, j, i);
                             break;
-                        case Globals.SANDGUY_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.SANDGUY_CHAR:
                             AddNPC(NPCTypeClass.NPCType.SandGuy, j, i);
                             break;
-                        case Globals.DOCKGUY_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.DOCKGUY_CHAR:
                             AddNPC(NPCTypeClass.NPCType.DockGuy, j, i);
                             break;
-                        case Globals.SIGN_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.SIGN_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Sign, j, i);
                             break;
-                        case Globals.JOURNAL_CHAR:
+                        case var _ when npcMap[i, j] == GameManager.globals.JOURNAL_CHAR:
                             AddNPC(NPCTypeClass.NPCType.Journal, j, i);
                             break;
                     }
@@ -119,18 +119,18 @@ namespace Text_Based_RPG
         {
             switch (npcMap[y, x])
             {
-                case Globals.QUEST_CHAR:
-                case Globals.SHOP_CHAR:
-                case Globals.GAMBLER_CHAR:
-                case Globals.FISHERMAN_CHAR:
-                case Globals.MAYOR_CHAR:
-                case Globals.SOLDIER_CHAR:
-                case Globals.HERMIT_CHAR:
-                case Globals.GRASSGUY_CHAR:
-                case Globals.SANDGUY_CHAR:
-                case Globals.DOCKGUY_CHAR:
-                case Globals.SIGN_CHAR:
-                case Globals.JOURNAL_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.QUEST_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.SHOP_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.GAMBLER_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.FISHERMAN_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.MAYOR_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.SOLDIER_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.HERMIT_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.GRASSGUY_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.SANDGUY_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.DOCKGUY_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.SIGN_CHAR:
+                case var _ when npcMap[y, x] == GameManager.globals.JOURNAL_CHAR:
                     return true;
                 default: 
                     return false;

@@ -27,37 +27,37 @@ namespace Text_Based_RPG
                 {
                     switch (map[i, j])
                     {
-                        case Globals.MAP_GRASS:
+                        case var _ when map[i, j] == GameManager.globals.MAP_GRASS:
                             render.ChangeSpace(map[i, j], ConsoleColor.Green, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_SAND:
+                        case var _ when map[i, j] == GameManager.globals.MAP_SAND:
                             render.ChangeSpace(map[i, j], ConsoleColor.Yellow, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_FOREST:
+                        case var _ when map[i, j] == GameManager.globals.MAP_FOREST:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkGreen, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_MOUNTAIN:
+                        case var _ when map[i, j] == GameManager.globals.MAP_MOUNTAIN:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkGray, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_WATER:
+                        case var _ when map[i, j] == GameManager.globals.MAP_WATER:
                             render.ChangeSpace(map[i, j], ConsoleColor.Blue, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_WOOD:
+                        case var _ when map[i, j] == GameManager.globals.MAP_WOOD:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_WALL:
+                        case var _ when map[i, j] == GameManager.globals.MAP_WALL:
                             render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.DarkGray, j, i);
                             break;
-                        case Globals.MAP_HOLE:
+                        case var _ when map[i, j] == GameManager.globals.MAP_HOLE:
                             render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_HOLE_FALSE:
+                        case var _ when map[i, j] == GameManager.globals.MAP_HOLE_FALSE:
                             render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_SHOP:
+                        case var _ when map[i, j] == GameManager.globals.MAP_SHOP:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
                             break;
-                        case Globals.MAP_SHOP_R:
+                        case var _ when map[i, j] == GameManager.globals.MAP_SHOP_R:
                             render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
                             break;
                     }
@@ -70,20 +70,20 @@ namespace Text_Based_RPG
             {
                 switch (map[y, x])
                 {
-                    case Globals.MAP_GRASS:
-                    case Globals.MAP_SAND:
-                    case Globals.MAP_FOREST:
-                    case Globals.MAP_WOOD:
-                    case Globals.MAP_SHOP:
-                    case Globals.MAP_SHOP_R:
-                    case Globals.MAP_HOLE_FALSE:
+                    case var _ when map[y, x] == GameManager.globals.MAP_GRASS:
+                    case var _ when map[y, x] == GameManager.globals.MAP_SAND:
+                    case var _ when map[y, x] == GameManager.globals.MAP_FOREST:
+                    case var _ when map[y, x] == GameManager.globals.MAP_WOOD:
+                    case var _ when map[y, x] == GameManager.globals.MAP_SHOP:
+                    case var _ when map[y, x] == GameManager.globals.MAP_SHOP_R:
+                    case var _ when map[y, x] == GameManager.globals.MAP_HOLE_FALSE:
                         return false;
-                    case Globals.MAP_WATER:
+                    case var _ when map[y, x] == GameManager.globals.MAP_WATER:
                         if (waterWalking) return false;
                         return true;
-                    case Globals.MAP_MOUNTAIN:
-                    case Globals.MAP_WALL:
-                    case Globals.MAP_HOLE:
+                    case var _ when map[y, x] == GameManager.globals.MAP_MOUNTAIN:
+                    case var _ when map[y, x] == GameManager.globals.MAP_WALL:
+                    case var _ when map[y, x] == GameManager.globals.MAP_HOLE:
                     default:
                         return true;
                 }

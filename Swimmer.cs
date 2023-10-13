@@ -10,12 +10,12 @@ namespace Text_Based_RPG
     {
         public Swimmer(int x, int y, Map map, AttackMap attackMap, Render render, EnemyTypeClass.EnemyType type) : base(x, y, map, attackMap, render)
         {
-            health = Globals.SWIMMER_HP;
-            maxHealth = Globals.SWIMMER_HP;
-            moveAt = Globals.SWIMMER_MOVEAT;
-            character = Globals.SWIMMER_CHAR;
-            strength = Globals.SWIMMER_STRENGTH;
-            attackShape = Globals.CROSS_ATTACK;
+            health = GameManager.globals.SWIMMER_HP;
+            maxHealth = GameManager.globals.SWIMMER_HP;
+            moveAt = GameManager.globals.SWIMMER_MOVEAT;
+            character = GameManager.globals.SWIMMER_CHAR;
+            strength = GameManager.globals.SWIMMER_STRENGTH;
+            attackShape = GameManager.globals.CROSS_ATTACK;
             this.Type = type;
             name = type.ToString();
             waterWalking = true;

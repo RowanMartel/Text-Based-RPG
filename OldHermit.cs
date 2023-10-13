@@ -13,7 +13,7 @@ namespace Text_Based_RPG
             health = 1;
             maxHealth = 1;
             dialogueCycle = 0;
-            character = Globals.HERMIT_CHAR;
+            character = GameManager.globals.HERMIT_CHAR;
             this.Type = type;
             name = "Old Hermit";
         }

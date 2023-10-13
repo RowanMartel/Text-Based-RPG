@@ -14,18 +14,18 @@ namespace Text_Based_RPG
 
         public Player(int x, int y, Map map, AttackMap attackMap, Render render) : base(x, y, map, attackMap, render)
         {
-            character = Globals.PLAYER_CHAR;
+            character = GameManager.globals.PLAYER_CHAR;
             color = ConsoleColor.White;
             attackColor = ConsoleColor.Magenta;
             baseColor = color;
-            attackShape = Globals.CROSS_ATTACK;
+            attackShape = GameManager.globals.CROSS_ATTACK;
             kamikaze = false;
-            strength = Globals.PLAYER_STRENGTH;
+            strength = GameManager.globals.PLAYER_STRENGTH;
             name = "Player";
             waterWalking = false;
-            health = Globals.PLAYER_HP;
-            maxHealth = Globals.PLAYER_HP;
-            coins = Globals.PLAYER_START_COINS;
+            health = GameManager.globals.PLAYER_HP;
+            maxHealth = GameManager.globals.PLAYER_HP;
+            coins = GameManager.globals.PLAYER_START_COINS;
         }
 
         public override void Update()

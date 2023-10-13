@@ -65,7 +65,7 @@ namespace Text_Based_RPG
         public void Bomb()
         {
             foreach (Enemy enemy in enemies)
-                enemy.TakeDamageDirect(Globals.SMALL_BOMB_DAMAGE);
+                enemy.TakeDamageDirect(GameManager.globals.SMALL_BOMB_DAMAGE);
             attackMap.Flash();
         }
 
@@ -94,19 +94,19 @@ namespace Text_Based_RPG
                 {
                     switch (enemyMap[i, j])
                     {
-                        case Globals.CHARGER_CHAR:
+                        case var _ when enemyMap[i, j] == GameManager.globals.CHARGER_CHAR:
                             AddEnemy(EnemyTypeClass.EnemyType.Charger, j, i);
                             break;
-                        case Globals.ELITE_CHAR:
+                        case var _ when enemyMap[i, j] == GameManager.globals.ELITE_CHAR:
                             AddEnemy(EnemyTypeClass.EnemyType.Elite, j, i);
                             break;
-                        case Globals.SWIMMER_CHAR:
+                        case var _ when enemyMap[i, j] == GameManager.globals.SWIMMER_CHAR:
                             AddEnemy(EnemyTypeClass.EnemyType.Swimmer, j, i);
                             break;
-                        case Globals.ROAMER_CHAR:
+                        case var _ when enemyMap[i, j] == GameManager.globals.ROAMER_CHAR:
                             AddEnemy(EnemyTypeClass.EnemyType.Roamer, j, i);
                             break;
-                        case Globals.LAVA_CHAR:
+                        case var _ when enemyMap[i, j] == GameManager.globals.LAVA_CHAR:
                             AddEnemy(EnemyTypeClass.EnemyType.Lava, j, i);
                             break;
                     }

@@ -8,6 +8,7 @@ namespace Text_Based_RPG
 {
     internal class GameManager
     {
+        public static Globals globals = new Globals();
         static Map map;
         static Render render;
         static AttackMap attack;
@@ -28,7 +29,7 @@ namespace Text_Based_RPG
             map = new Map();
             render = new Render(map);
             attack = new AttackMap(map, render);
-            player = new Player(Globals.START_X, Globals.START_Y, map, attack, render);
+            player = new Player(globals.START_X, globals.START_Y, map, attack, render);
             playerUI = new PlayerUI(player);
             itemManager = new ItemManager(render, attack, map, player);
             npcManager = new NPCManager(attack, player, render, map, itemManager);

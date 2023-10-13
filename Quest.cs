@@ -59,11 +59,11 @@ namespace Text_Based_RPG
             switch (state)
             {
                 case QuestState.unaccepted: 
-                    render.ChangeSpace(Globals.UNACCEPTED_QUEST, ConsoleColor.Black, ConsoleColor.Red, x, y); return;
+                    render.ChangeSpace(GameManager.globals.UNACCEPTED_QUEST, ConsoleColor.Black, ConsoleColor.Red, x, y); return;
                 case QuestState.accepted:
-                    render.ChangeSpace(Globals.ACCEPTED_QUEST, ConsoleColor.Black, ConsoleColor.Yellow, x, y); return;
+                    render.ChangeSpace(GameManager.globals.ACCEPTED_QUEST, ConsoleColor.Black, ConsoleColor.Yellow, x, y); return;
                 case QuestState.notTurnedIn:
-                    render.ChangeSpace(Globals.NOT_TURNED_IN_QUEST, ConsoleColor.Black, ConsoleColor.Green, x, y); return;
+                    render.ChangeSpace(GameManager.globals.NOT_TURNED_IN_QUEST, ConsoleColor.Black, ConsoleColor.Green, x, y); return;
             }
             
         }
@@ -129,11 +129,11 @@ namespace Text_Based_RPG
                     player.TakeDamage(3);
                     break;
                 case QuestTypeClass.QuestType.GiveSpear:
-                    player.ChangeAttackShape(Globals.CROSS_ATTACK);
+                    player.ChangeAttackShape(GameManager.globals.CROSS_ATTACK);
                     GameManager.playerUI.AddEvent("player lost the spear!");
                     break;
                 case QuestTypeClass.QuestType.GiveHula:
-                    player.ChangeAttackShape(Globals.CROSS_ATTACK);
+                    player.ChangeAttackShape(GameManager.globals.CROSS_ATTACK);
                     GameManager.playerUI.AddEvent("player lost the hula-hoop!");
                     break;
             }
@@ -154,13 +154,13 @@ namespace Text_Based_RPG
                         state = QuestState.accepted;
                     break;
                 case QuestTypeClass.QuestType.GiveSpear:
-                    if (player.GetAttackShape() == Globals.LONG_ATTACK)
+                    if (player.GetAttackShape() == GameManager.globals.LONG_ATTACK)
                         state = QuestState.notTurnedIn;
                     else
                         state = QuestState.accepted;
                     break;
                 case QuestTypeClass.QuestType.GiveHula:
-                    if (player.GetAttackShape() == Globals.RING_ATTACK)
+                    if (player.GetAttackShape() == GameManager.globals.RING_ATTACK)
                         state = QuestState.notTurnedIn;
                     else
                         state = QuestState.accepted;

@@ -61,29 +61,29 @@ namespace Text_Based_RPG
                 {
                     switch (itemMap[i, j])
                     {
-                        case Globals.GEM_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Gem, j, i, Globals.GEM_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.GEM_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Gem, j, i, GameManager.globals.GEM_COST);
                             break;
-                        case Globals.BOAT_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Boat, j, i, Globals.BOAT_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.BOAT_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Boat, j, i, GameManager.globals.BOAT_COST);
                             break;
-                        case Globals.HULA_CHAR:
-                            AddItem(ItemTypeClass.ItemType.HulaHoop, j, i, Globals.HULA_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.HULA_CHAR:
+                            AddItem(ItemTypeClass.ItemType.HulaHoop, j, i, GameManager.globals.HULA_COST);
                             break;
-                        case Globals.SPEAR_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Spear, j, i, Globals.SPEAR_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.SPEAR_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Spear, j, i, GameManager.globals.SPEAR_COST);
                             break;
-                        case Globals.BOMB_CHAR:
-                            AddItem(ItemTypeClass.ItemType.Bomb, j, i, Globals.BOMB_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.BOMB_CHAR:
+                            AddItem(ItemTypeClass.ItemType.Bomb, j, i, GameManager.globals.BOMB_COST);
                             break;
-                        case Globals.HEALTH_CHAR:
-                            AddItem(ItemTypeClass.ItemType.HealthPickup, j, i, Globals.HEALTH_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.HEALTH_CHAR:
+                            AddItem(ItemTypeClass.ItemType.HealthPickup, j, i, GameManager.globals.HEALTH_COST);
                             break;
-                        case Globals.HEALTH_CHAR2:
-                            AddItem(ItemTypeClass.ItemType.HealthPickupLarge, j, i, Globals.HEALTH_COST2);
+                        case var _ when itemMap[i, j] == GameManager.globals.HEALTH_CHAR2:
+                            AddItem(ItemTypeClass.ItemType.HealthPickupLarge, j, i, GameManager.globals.HEALTH_COST2);
                             break;
-                        case Globals.COINBAG_CHAR:
-                            AddItem(ItemTypeClass.ItemType.CoinBag, j, i, Globals.COINBAG_COST);
+                        case var _ when itemMap[i, j] == GameManager.globals.COINBAG_CHAR:
+                            AddItem(ItemTypeClass.ItemType.CoinBag, j, i, GameManager.globals.COINBAG_COST);
                             break;
                     }
                 }
