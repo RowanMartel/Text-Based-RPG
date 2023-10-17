@@ -15,20 +15,20 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.FISHERMAN_CHAR;
             this.Type = type;
-            name = "Fisherman";
+            name = GameManager.globals.FISHERMAN_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Aye lad, what can i do for thee?\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.FISHERMAN1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"If ye need a boat, you can buy me old one sitting over there\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.FISHERMAN2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"Ye know, there used to be a old man 'round here, sailed off one day and I aven't seen him since\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.FISHERMAN3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

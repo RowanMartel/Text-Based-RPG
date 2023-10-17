@@ -15,20 +15,20 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.GRASSGUY_CHAR;
             this.Type = type;
-            name = "Grass Guy";
+            name = GameManager.globals.GRASSGUY_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Oh me? just enjoying this supreb grass!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.GRASSGUY1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"Theres a fortress north of here, they say you need to sail up the river to get inside\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.GRASSGUY2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"Gem? oh, talk to the Mayor he can help\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.GRASSGUY3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

@@ -36,5 +36,11 @@
 	"CHARGER_AI_STR": "Chase",
 	"LAVA_AI_STR": "Static",
 	"SWIMMER_AI_STR": "Random",
-	"ELITE_AI_STR": "Random"
+	"ELITE_AI_STR": "Random",
+
+	"ROAMER_NAME": "Roamer",
+	"CHARGER_NAME": "Charger",
+	"LAVA_NAME": "Lava",
+	"SWIMMER_NAME": "Swimmer",
+	"ELITE_NAME": "Elite"
 }

@@ -88,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="jsons\Dialogue.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="jsons\Enemy_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

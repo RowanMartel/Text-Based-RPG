@@ -21,7 +21,7 @@ namespace Text_Based_RPG
             attackShape = GameManager.globals.PLAYER_DEFAULT_ATTACK_SHAPE;
             kamikaze = false;
             strength = GameManager.globals.PLAYER_STRENGTH;
-            name = "Player";
+            name = GameManager.globals.PLAYER_NAME;
             waterWalking = false;
             health = GameManager.globals.PLAYER_HP;
             maxHealth = GameManager.globals.PLAYER_HP;

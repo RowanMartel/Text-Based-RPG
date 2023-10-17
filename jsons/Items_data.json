@@ -25,6 +25,15 @@
 	"GEM_COST": 100,
 	"COINBAG_COST": 5,
 
+	"HEALTH_NAME": "health pickup",
+	"HEALTH2_NAME": "large health pickup",
+	"SPEAR_NAME": "spear",
+	"BOMB_NAME": "bomb",
+	"BOAT_NAME": "boat",
+	"HULA_NAME": "hula-hoop",
+	"GEM_NAME": "magical gem",
+	"COINBAG_NAME": "bag of coins",
+
 	"HEALTH_COLOUR_STR": "Magenta",
 	"HEALTH2_COLOUR_STR": "Red",
 	"SPEAR_COLOUR_STR": "Gray",

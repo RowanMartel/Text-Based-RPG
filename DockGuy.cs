@@ -15,20 +15,20 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.DOCKGUY_CHAR;
             this.Type = type;
-            name = "Dock Guy";
+            name = GameManager.globals.DOCKGUY_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Oh me? I'm just enjoying this wonderful dock\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.DOCKGUY1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"Some people say if you follow the old dock heading west, theres a fortress at the end!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.DOCKGUY2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"If you need a way to cross water, go to the fisherman's shack on the water\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.DOCKGUY3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

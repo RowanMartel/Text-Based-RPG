@@ -18,7 +18,7 @@ namespace Text_Based_RPG
             attackShape = GameManager.globals.ELITE_ATTACK_SHAPE;
             AI = GameManager.globals.ELITE_AI;
             this.Type = type;
-            name = type.ToString();
+            name = GameManager.globals.ELITE_NAME;
         }
     }
 }

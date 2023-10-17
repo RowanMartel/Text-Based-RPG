@@ -25,23 +25,23 @@ namespace Text_Based_RPG
             switch (itemType)
             {
                 case ItemType.HealthPickup:
-                    return new Item(GameManager.globals.HEALTH_CHAR, GameManager.globals.HEALTH_COLOUR, x, y, itemType, render, attackMap, map, player, "health pickup", cost);
+                    return new Item(GameManager.globals.HEALTH_CHAR, GameManager.globals.HEALTH_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.HEALTH_NAME, cost);
                 case ItemType.HealthPickupLarge:
-                    return new Item(GameManager.globals.HEALTH_CHAR2, GameManager.globals.HEALTH2_COLOUR, x, y, itemType, render, attackMap, map, player, "large health pickup", cost);
+                    return new Item(GameManager.globals.HEALTH_CHAR2, GameManager.globals.HEALTH2_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.HEALTH2_NAME, cost);
                 case ItemType.Spear:
-                    return new Item(GameManager.globals.SPEAR_CHAR, GameManager.globals.SPEAR_COLOUR, x, y, itemType, render, attackMap, map, player, "spear", cost);
+                    return new Item(GameManager.globals.SPEAR_CHAR, GameManager.globals.SPEAR_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.SPEAR_NAME, cost);
                 case ItemType.Bomb:
-                    return new Item(GameManager.globals.BOMB_CHAR, GameManager.globals.BOMB_COLOUR, x, y, itemType, render, attackMap, map, player, "bomb", cost);
+                    return new Item(GameManager.globals.BOMB_CHAR, GameManager.globals.BOMB_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.BOMB_NAME, cost);
                 case ItemType.Boat:
-                    return new Item(GameManager.globals.BOAT_CHAR, GameManager.globals.BOAT_COLOUR, x, y, itemType, render, attackMap, map, player, "boat", cost);
+                    return new Item(GameManager.globals.BOAT_CHAR, GameManager.globals.BOAT_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.BOAT_NAME, cost);
                 case ItemType.HulaHoop:
-                    return new Item(GameManager.globals.HULA_CHAR, GameManager.globals.HULA_COLOUR, x, y, itemType, render, attackMap, map, player, "hula-hoop", cost);
+                    return new Item(GameManager.globals.HULA_CHAR, GameManager.globals.HULA_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.HULA_NAME, cost);
                 case ItemType.Gem:
-                    return new Item(GameManager.globals.GEM_CHAR, GameManager.globals.GEM_COLOUR, x, y, itemType, render, attackMap, map, player, "magical gem", cost);
+                    return new Item(GameManager.globals.GEM_CHAR, GameManager.globals.GEM_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.GEM_NAME, cost);
                 case ItemType.CoinBag:
-                    return new Item(GameManager.globals.COINBAG_CHAR, GameManager.globals.COINBAG_COLOUR, x, y, itemType, render, attackMap, map, player, "bag of coins", cost);
+                    return new Item(GameManager.globals.COINBAG_CHAR, GameManager.globals.COINBAG_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.COINBAG_NAME, cost);
                 default:
-                    return new Item(GameManager.globals.HEALTH_CHAR, GameManager.globals.HEALTH_COLOUR, x, y, itemType, render, attackMap, map, player, "health pickup", cost);
+                    return new Item(GameManager.globals.HEALTH_CHAR, GameManager.globals.HEALTH_COLOUR, x, y, itemType, render, attackMap, map, player, GameManager.globals.HEALTH_NAME, cost);
             }
         }
     }

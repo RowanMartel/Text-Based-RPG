@@ -14,12 +14,12 @@ namespace Text_Based_RPG
             maxHealth = 1;
             character = GameManager.globals.SIGN_CHAR;
             this.Type = type;
-            name = "Shop Sign";
+            name = GameManager.globals.SIGN_NAME;
         }
 
         public override void Interact()
         {
-            GameManager.playerUI.AddEvent("\"Health Shop! (and nothing shady!)\" -" + name);
+            GameManager.playerUI.AddEvent(GameManager.globals.SIGN1 + name);
         }
     }
 }

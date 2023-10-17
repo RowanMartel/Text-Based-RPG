@@ -15,20 +15,20 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.SANDGUY_CHAR;
             this.Type = type;
-            name = "Sand Guy";
+            name = GameManager.globals.SANDGUY_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Oh me? just enjoying this amazing sand!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.SANDGUY1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"If you head west along the cost you'll find a retired soldier, he's a pretty cool dude!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.SANDGUY2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"If you want to sign up to some quests before you go, just enter the building east of here!\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.SANDGUY3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

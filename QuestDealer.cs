@@ -15,7 +15,7 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.QUEST_CHAR;
             this.Type = type;
-            name = "Quest Manager";
+            name = GameManager.globals.QUEST_NAME;
         }
 
         public override void Interact()
@@ -23,10 +23,10 @@ namespace Text_Based_RPG
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Oh! Hi! Didn't see you there, feel free to take a quest!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.QUESTDEALER1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"What? a gem you say? I heard the Mayor might have one\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.QUESTDEALER2 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

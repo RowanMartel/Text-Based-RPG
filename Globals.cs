@@ -89,6 +89,34 @@ namespace Text_Based_RPG
         public char HULA_CHAR { get; set; }
         public char GEM_CHAR { get; set; }
 
+        // name constants
+        public string PLAYER_NAME { get; set; }
+        public string SHOP_NAME { get; set; }
+        public string GAMBLER_NAME { get; set; }
+        public string QUEST_NAME { get; set; }
+        public string FISHERMAN_NAME { get; set; }
+        public string MAYOR_NAME { get; set; }
+        public string SOLDIER_NAME { get; set; }
+        public string HERMIT_NAME { get; set; }
+        public string GRASSGUY_NAME { get; set; }
+        public string SANDGUY_NAME { get; set; }
+        public string DOCKGUY_NAME { get; set; }
+        public string SIGN_NAME { get; set; }
+        public string JOURNAL_NAME { get; set; }
+        public string ROAMER_NAME { get; set; }
+        public string CHARGER_NAME { get; set; }
+        public string LAVA_NAME { get; set; }
+        public string SWIMMER_NAME { get; set; }
+        public string ELITE_NAME { get; set; }
+        public string HEALTH_NAME { get; set; }
+        public string HEALTH2_NAME { get; set; }
+        public string COINBAG_NAME { get; set; }
+        public string SPEAR_NAME { get; set; }
+        public string BOMB_NAME { get; set; }
+        public string BOAT_NAME { get; set; }
+        public string HULA_NAME { get; set; }
+        public string GEM_NAME { get; set; }
+
         // character colour constants
         public ConsoleColor CHARACTER_COLOUR { get; set; }
         public ConsoleColor ENEMY_COLOUR { get; set; }
@@ -247,6 +275,45 @@ namespace Text_Based_RPG
         public int SWIMMER_STRENGTH { get; set; }
         public int ELITE_STRENGTH { get; set; }
 
+        // dialogue
+        public string DOCKGUY1 { get; set; }
+        public string DOCKGUY2 { get; set; }
+        public string DOCKGUY3 { get; set; }
+        public string FISHERMAN1 { get; set; }
+        public string FISHERMAN2 { get; set; }
+        public string FISHERMAN3 { get; set; }
+        public string GAMBLER1 { get; set; }
+        public string GAMBLER2 { get; set; }
+        public string GAMBLER3 { get; set; }
+        public string GRASSGUY1 { get; set; }
+        public string GRASSGUY2 { get; set; }
+        public string GRASSGUY3 { get; set; }
+        public string JOURNAL1 { get; set; }
+        public string JOURNAL2 { get; set; }
+        public string JOURNAL3 { get; set; }
+        public string MAYOR1 { get; set; }
+        public string MAYOR2 { get; set; }
+        public string MAYOR3 { get; set; }
+        public string MAYOR4 { get; set; }
+        public string OLDHERMIT1 { get; set; }
+        public string OLDHERMIT2 { get; set; }
+        public string OLDHERMIT3 { get; set; }
+        public string QUESTDEALER1 { get; set; }
+        public string QUESTDEALER2 { get; set; }
+        public string RETIREDSOLDIER1 { get; set; }
+        public string RETIREDSOLDIER2 { get; set; }
+        public string RETIREDSOLDIER3 { get; set; }
+        public string SANDGUY1 { get; set; }
+        public string SANDGUY2 { get; set; }
+        public string SANDGUY3 { get; set; }
+        public string SHOPKEEP1 { get; set; }
+        public string SHOPKEEP2 { get; set; }
+        public string SHOPKEEP3 { get; set; }
+        public string SIGN1 { get; set; }
+        public string GIVE_HEALTH_QUEST { get; set; }
+        public string GIVE_SPEAR_QUEST { get; set; }
+        public string GIVE_HULA_QUEST { get; set; }
+
         // random class constant
         public static Random random = new Random();
 
@@ -292,10 +359,15 @@ namespace Text_Based_RPG
             string playerAndMiscJsonData = File.ReadAllText(playerAndMiscDataPath);
             var playerAndMiscData = JsonSerializer.Deserialize<Globals>(playerAndMiscJsonData);
 
-            CopySettings(itemsData, enemyData, npcData, questsData, mapData, playerAndMiscData);
+            // dialogue
+            string dialoguePath = "jsons/Dialogue.json";
+            string dialogueJsonData = File.ReadAllText(dialoguePath);
+            var dialogue = JsonSerializer.Deserialize<Globals>(dialogueJsonData);
+
+            CopySettings(itemsData, enemyData, npcData, questsData, mapData, playerAndMiscData, dialogue);
         }
 
-        private void CopySettings(Globals itemsData, Globals enemyData, Globals npcData, Globals questsData, Globals mapData, Globals playerAndMiscData)
+        private void CopySettings(Globals itemsData, Globals enemyData, Globals npcData, Globals questsData, Globals mapData, Globals playerAndMiscData, Globals dialogue)
         {
             // items data
             HEAL_SMALL = itemsData.HEAL_SMALL;
@@ -329,6 +401,14 @@ namespace Text_Based_RPG
             COINBAG_COLOUR = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), itemsData.COINBAG_COLOUR_STR);
             SPEAR_ATTACK_SHAPE = (AttackShape)Enum.Parse(typeof(AttackShape), itemsData.SPEAR_ATTACK_SHAPE_STR);
             HULA_ATTACK_SHAPE = (AttackShape)Enum.Parse(typeof(AttackShape), itemsData.HULA_ATTACK_SHAPE_STR);
+            HEALTH_NAME = itemsData.HEALTH_NAME;
+            HEALTH2_NAME = itemsData.HEALTH2_NAME;
+            SPEAR_NAME = itemsData.SPEAR_NAME;
+            BOMB_NAME = itemsData.BOMB_NAME;
+            BOAT_NAME = itemsData.BOAT_NAME;
+            HULA_NAME = itemsData.HEALTH_NAME;
+            GEM_NAME = itemsData.HEALTH2_NAME;
+            COINBAG_NAME = itemsData.COINBAG_NAME;
 
             // enemies data
             ROAMER_CHAR = enemyData.ROAMER_CHAR;
@@ -363,6 +443,11 @@ namespace Text_Based_RPG
             LAVA_AI = (EnemyAI)Enum.Parse(typeof(EnemyAI), enemyData.LAVA_AI_STR);
             SWIMMER_AI = (EnemyAI)Enum.Parse(typeof(EnemyAI), enemyData.SWIMMER_AI_STR);
             ELITE_AI = (EnemyAI)Enum.Parse(typeof(EnemyAI), enemyData.ELITE_AI_STR);
+            ROAMER_NAME = enemyData.ROAMER_NAME;
+            CHARGER_NAME = enemyData.CHARGER_NAME;
+            LAVA_NAME = enemyData.LAVA_NAME;
+            SWIMMER_NAME = enemyData.SWIMMER_NAME;
+            ELITE_NAME = enemyData.ELITE_NAME;
 
             // npc data
             SHOP_CHAR = npcData.SHOP_CHAR;
@@ -377,6 +462,18 @@ namespace Text_Based_RPG
             DOCKGUY_CHAR = npcData.DOCKGUY_CHAR;
             SIGN_CHAR = npcData.SIGN_CHAR;
             JOURNAL_CHAR = npcData.JOURNAL_CHAR;
+            SHOP_NAME = npcData.SHOP_NAME;
+            GAMBLER_NAME = npcData.GAMBLER_NAME;
+            QUEST_NAME = npcData.QUEST_NAME;
+            FISHERMAN_NAME = npcData.FISHERMAN_NAME;
+            MAYOR_NAME = npcData. MAYOR_NAME;
+            SOLDIER_NAME = npcData.SOLDIER_NAME;
+            HERMIT_NAME = npcData.HERMIT_NAME;
+            GRASSGUY_NAME = npcData.GRASSGUY_NAME;
+            SANDGUY_NAME = npcData.SANDGUY_NAME;
+            DOCKGUY_NAME = npcData.DOCKGUY_NAME;
+            SIGN_NAME = npcData.SIGN_NAME;
+            JOURNAL_NAME = npcData.JOURNAL_NAME;
             NPC_COLOUR = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), npcData.NPC_COLOUR_STR);
 
             // quests data
@@ -447,6 +544,46 @@ namespace Text_Based_RPG
             PLAYER_COLOUR = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), playerAndMiscData.PLAYER_COLOUR_STR);
             PLAYER_ATTACKING_COLOUR = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), playerAndMiscData.PLAYER_ATTACKING_COLOUR_STR);
             PLAYER_DEFAULT_ATTACK_SHAPE = (AttackShape)Enum.Parse(typeof(AttackShape), playerAndMiscData.PLAYER_DEFAULT_ATTACK_SHAPE_STR);
+            PLAYER_NAME = playerAndMiscData.PLAYER_NAME;
+
+            // dialogue
+            DOCKGUY1 = dialogue.DOCKGUY1;
+            DOCKGUY2 = dialogue.DOCKGUY2;
+            DOCKGUY3 = dialogue.DOCKGUY3;
+            FISHERMAN1 = dialogue.FISHERMAN1;
+            FISHERMAN2 = dialogue.FISHERMAN2;
+            FISHERMAN3 = dialogue.FISHERMAN3;
+            GAMBLER1 = dialogue.GAMBLER1;
+            GAMBLER2 = dialogue.GAMBLER2;
+            GAMBLER3 = dialogue.GAMBLER3;
+            GRASSGUY1 = dialogue.GRASSGUY1;
+            GRASSGUY2 = dialogue.GRASSGUY2;
+            GRASSGUY3 = dialogue.GRASSGUY3;
+            JOURNAL1 = dialogue.JOURNAL1;
+            JOURNAL2 = dialogue.JOURNAL2;
+            JOURNAL3 = dialogue.JOURNAL3;
+            MAYOR1 = dialogue.MAYOR1;
+            MAYOR2 = dialogue.MAYOR2;
+            MAYOR3 = dialogue.MAYOR3;
+            MAYOR4 = dialogue.MAYOR4;
+            OLDHERMIT1 = dialogue.OLDHERMIT1;
+            OLDHERMIT2 = dialogue.OLDHERMIT2;
+            OLDHERMIT3 = dialogue.OLDHERMIT3;
+            QUESTDEALER1 = dialogue.QUESTDEALER1;
+            QUESTDEALER2 = dialogue.QUESTDEALER2;
+            RETIREDSOLDIER1 = dialogue.RETIREDSOLDIER1;
+            RETIREDSOLDIER2 = dialogue.RETIREDSOLDIER2;
+            RETIREDSOLDIER3 = dialogue.RETIREDSOLDIER3;
+            SANDGUY1 = dialogue.SANDGUY1;
+            SANDGUY2 = dialogue.SANDGUY2;
+            SANDGUY3 = dialogue.SANDGUY3;
+            SHOPKEEP1 = dialogue.SHOPKEEP1;
+            SHOPKEEP2 = dialogue.SHOPKEEP2;
+            SHOPKEEP3 = dialogue.SHOPKEEP3;
+            SIGN1 = dialogue.SIGN1;
+            GIVE_HEALTH_QUEST = dialogue.GIVE_HEALTH_QUEST;
+            GIVE_SPEAR_QUEST = dialogue.GIVE_SPEAR_QUEST;
+            GIVE_HULA_QUEST = dialogue.GIVE_HULA_QUEST;
         }
     }
 }

@@ -15,20 +15,20 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.SHOP_CHAR;
             this.Type = type;
-            name = "Shop Keep";
+            name = GameManager.globals.SHOP_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Hello! Welcome to my humble shop!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.SHOPKEEP1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"If you want to try your luck, talk to my friend the room over\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.SHOPKEEP2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"Gem? no I don't have anything like that\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.SHOPKEEP3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

@@ -18,7 +18,7 @@ namespace Text_Based_RPG
             attackShape = GameManager.globals.CHARGER_ATTACK_SHAPE;
             AI = GameManager.globals.CHARGER_AI;
             this.Type = type;
-            name = type.ToString();
+            name = GameManager.globals.CHARGER_NAME;
             kamikaze = true;
         }
     }

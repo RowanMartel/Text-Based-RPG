@@ -15,23 +15,23 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.MAYOR_CHAR;
             this.Type = type;
-            name = "Mayor";
+            name = GameManager.globals.MAYOR_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"A gem you say? yes I have it but I need a favor\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.MAYOR1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"Kill all the elites in the area and I'll sell you one\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.MAYOR2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"Need help? talk to the Guys, they'll point you in the right direction\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.MAYOR3 + name);
                     break;
                 case 3:
-                    GameManager.playerUI.AddEvent("\"Come back when your done, I'll have the gem ready\" -" + name); dialogueCycle = 3;
+                    GameManager.playerUI.AddEvent(GameManager.globals.MAYOR4 + name); dialogueCycle = 3;
                     return;
             }
             dialogueCycle++;

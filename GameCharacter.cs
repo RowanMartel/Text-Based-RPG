@@ -29,6 +29,8 @@ namespace Text_Based_RPG
 
         protected string name;
 
+        protected Globals.EnemyAI AI;
+
         public GameCharacter(int x, int y, Map map, AttackMap attackMap, Render render)
         {
             this.x = x;
@@ -106,7 +108,7 @@ namespace Text_Based_RPG
 
         protected virtual void Attack(Globals.AttackShape attackShape)
         {
-            if (name != "Lava")
+            if (AI != Globals.EnemyAI.Static)
                 GameManager.playerUI.AddEvent(name + " attacked!");
             color = attackColor;
             attackMap.AddAttack(x, y, strength, attackShape, name);

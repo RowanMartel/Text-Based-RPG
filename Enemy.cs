@@ -11,7 +11,6 @@ namespace Text_Based_RPG
         protected int moveCharge;
         protected int moveAt;
         protected EnemyTypeClass.EnemyType Type;
-        protected Globals.EnemyAI AI;
 
         public Enemy(int x, int y, Map map, AttackMap attackMap, Render render) : base(x, y, map, attackMap, render)
         {

@@ -18,7 +18,7 @@ namespace Text_Based_RPG
             attackShape = GameManager.globals.LAVA_ATTACK_SHAPE;
             AI = GameManager.globals.LAVA_AI;
             this.Type = type;
-            name = type.ToString();
+            name = GameManager.globals.LAVA_NAME;
         }
     }
 }

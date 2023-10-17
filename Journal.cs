@@ -22,13 +22,13 @@ namespace Text_Based_RPG
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Day XXX: Ever since I heard the legend of the old hero, I've been training for a great quest!\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.JOURNAL1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"Day XZX: Finally a lead to begin my quest! but to pursue it I need an gem...\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.JOURNAL2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"Day XYZ: Given the research I've done, there should be someone in this town who has one, time to ask around\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.JOURNAL3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

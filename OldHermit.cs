@@ -15,20 +15,20 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.HERMIT_CHAR;
             this.Type = type;
-            name = "Old Hermit";
+            name = GameManager.globals.HERMIT_NAME;
         }
         public override void Interact()
         {
             switch (dialogueCycle)
             {
                 case 0:
-                    GameManager.playerUI.AddEvent("\"Hehehehehe ooooo look at you hehehe\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.OLDHERMIT1 + name);
                     break;
                 case 1:
-                    GameManager.playerUI.AddEvent("\"Need some fire power? hehe I've got just the thing hehe\" -" + name);
+                    GameManager.playerUI.AddEvent(GameManager.globals.OLDHERMIT2 + name);
                     break;
                 case 2:
-                    GameManager.playerUI.AddEvent("\"If you buy it you'll never have to fight again hehe\" -" + name); dialogueCycle = 0;
+                    GameManager.playerUI.AddEvent(GameManager.globals.OLDHERMIT3 + name); dialogueCycle = 0;
                     return;
             }
             dialogueCycle++;

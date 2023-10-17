@@ -12,5 +12,18 @@
 	"SIGN_CHAR": "P",
 	"JOURNAL_CHAR": "J",
 
+	"SHOP_NAME": "Shop Keep",
+	"GAMBLER_NAME": "Gambler",
+	"QUEST_NAME": "Quest Manager",
+	"FISHERMAN_NAME": "Fisherman",
+	"MAYOR_NAME": "Mayor",
+	"SOLDIER_NAME": "Retired Soldier",
+	"HERMIT_NAME": "Old hermit",
+	"GRASSGUY_NAME": "Grass Guy",
+	"SANDGUY_NAME": "Sand Guy",
+	"DOCKGUY_NAME": "Dock Guy",
+	"SIGN_NAME": "Shop Sign",
+	"JOURNAL_NAME": "Journal",
+
 	"NPC_COLOUR_STR": "Green"
 }

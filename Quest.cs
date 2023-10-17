@@ -130,11 +130,11 @@ namespace Text_Based_RPG
                     break;
                 case QuestTypeClass.QuestType.GiveSpear:
                     player.ChangeAttackShape(GameManager.globals.PLAYER_DEFAULT_ATTACK_SHAPE);
-                    GameManager.playerUI.AddEvent("player lost the spear!");
+                    GameManager.playerUI.AddEvent("player lost the " + GameManager.globals.SPEAR_NAME + "!");
                     break;
                 case QuestTypeClass.QuestType.GiveHula:
                     player.ChangeAttackShape(GameManager.globals.PLAYER_DEFAULT_ATTACK_SHAPE);
-                    GameManager.playerUI.AddEvent("player lost the hula-hoop!");
+                    GameManager.playerUI.AddEvent("player lost the " + GameManager.globals.HULA_NAME + "!");
                     break;
             }
 

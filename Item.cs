@@ -162,7 +162,7 @@ namespace Text_Based_RPG
             if (hidden)
             {
                 hidden = false;
-                GameManager.playerUI.AddEvent("You killed all the Elites!");
+                GameManager.playerUI.AddEvent("You killed all the " + GameManager.globals.ELITE_NAME + "s!");
             }
         }
     }
