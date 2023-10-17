@@ -15,10 +15,10 @@ namespace Text_Based_RPG
         public Player(int x, int y, Map map, AttackMap attackMap, Render render) : base(x, y, map, attackMap, render)
         {
             character = GameManager.globals.PLAYER_CHAR;
-            color = ConsoleColor.White;
-            attackColor = ConsoleColor.Magenta;
+            color = GameManager.globals.PLAYER_COLOUR;
+            attackColor = GameManager.globals.PLAYER_ATTACKING_COLOUR;
             baseColor = color;
-            attackShape = GameManager.globals.CROSS_ATTACK;
+            attackShape = GameManager.globals.PLAYER_DEFAULT_ATTACK_SHAPE;
             kamikaze = false;
             strength = GameManager.globals.PLAYER_STRENGTH;
             name = "Player";
@@ -64,7 +64,7 @@ namespace Text_Based_RPG
             Move();
         }
 
-        protected override void Attack(int attackShape)
+        protected override void Attack(Globals.AttackShape attackShape)
         {
             base.Attack(attackShape);
 

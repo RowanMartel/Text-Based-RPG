@@ -43,7 +43,7 @@ namespace Text_Based_RPG
 
         public void InitQuests()
         {
-            string[] mapString = File.ReadAllLines("Quests.txt");
+            string[] mapString = File.ReadAllLines("maps/Quests.txt");
             char[,] questMap = new char[mapString.GetLength(0), mapString[0].Length];
 
             for (int i = 0; i < mapString.GetLength(0); i++)

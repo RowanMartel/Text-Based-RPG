@@ -28,37 +28,37 @@ namespace Text_Based_RPG
                     switch (map[i, j])
                     {
                         case var _ when map[i, j] == GameManager.globals.MAP_GRASS:
-                            render.ChangeSpace(map[i, j], ConsoleColor.Green, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.GRASS_COLOUR_BG, GameManager.globals.GRASS_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_SAND:
-                            render.ChangeSpace(map[i, j], ConsoleColor.Yellow, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.SAND_COLOUR_BG, GameManager.globals.SAND_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_FOREST:
-                            render.ChangeSpace(map[i, j], ConsoleColor.DarkGreen, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.FOREST_COLOUR_BG, GameManager.globals.FOREST_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_MOUNTAIN:
-                            render.ChangeSpace(map[i, j], ConsoleColor.DarkGray, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.MOUNTAIN_COLOUR_BG, GameManager.globals.MOUNTAIN_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_WATER:
-                            render.ChangeSpace(map[i, j], ConsoleColor.Blue, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.WATER_COLOUR_BG, GameManager.globals.WATER_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_WOOD:
-                            render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.WOOD_COLOUR_BG, GameManager.globals.WOOD_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_WALL:
-                            render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.DarkGray, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.WALL_COLOUR_BG, GameManager.globals.WALL_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_HOLE:
-                            render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.HOLE_COLOUR_BG, GameManager.globals.HOLE_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_HOLE_FALSE:
-                            render.ChangeSpace(map[i, j], ConsoleColor.Black, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.HOLE_FALSE_COLOUR_BG, GameManager.globals.HOLE_FALSE_COLOUR_FG, j, i);
                             break;
                         case var _ when map[i, j] == GameManager.globals.MAP_SHOP:
-                            render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
+                            render.ChangeSpace(map[i, j], GameManager.globals.SHOP_COLOUR_BG, GameManager.globals.SHOP_COLOUR_FG, j, i);
                             break;
-                        case var _ when map[i, j] == GameManager.globals.MAP_SHOP_R:
-                            render.ChangeSpace(map[i, j], ConsoleColor.DarkYellow, ConsoleColor.Black, j, i);
+                        case var _ when map[i, j] == GameManager.globals.MAP_SHOP_RESTOCKING:
+                            render.ChangeSpace(map[i, j], GameManager.globals.SHOP_RESTOCKING_COLOUR_BG, GameManager.globals.SHOP_RESTOCKING_COLOUR_FG, j, i);
                             break;
                     }
                 }
@@ -75,7 +75,7 @@ namespace Text_Based_RPG
                     case var _ when map[y, x] == GameManager.globals.MAP_FOREST:
                     case var _ when map[y, x] == GameManager.globals.MAP_WOOD:
                     case var _ when map[y, x] == GameManager.globals.MAP_SHOP:
-                    case var _ when map[y, x] == GameManager.globals.MAP_SHOP_R:
+                    case var _ when map[y, x] == GameManager.globals.MAP_SHOP_RESTOCKING:
                     case var _ when map[y, x] == GameManager.globals.MAP_HOLE_FALSE:
                         return false;
                     case var _ when map[y, x] == GameManager.globals.MAP_WATER:
@@ -118,7 +118,7 @@ namespace Text_Based_RPG
 
         public Map()
         {
-            string[] mapString = File.ReadAllLines("Map.txt");
+            string[] mapString = File.ReadAllLines("maps/Map.txt");
             map = new char[mapString.GetLength(0),mapString[0].Length];
 
             for (int i = 0; i < mapString.GetLength(0); i++)

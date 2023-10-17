@@ -26,6 +26,7 @@ namespace Text_Based_RPG
 
         public static void InitializeObjects()
         {
+            globals.LoadAllData();
             map = new Map();
             render = new Render(map);
             attack = new AttackMap(map, render);

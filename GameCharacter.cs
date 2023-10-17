@@ -18,7 +18,7 @@ namespace Text_Based_RPG
 
         protected int x, y;
         protected int xDelta, yDelta;
-        protected int attackShape;
+        protected Globals.AttackShape attackShape;
         protected int health;
         protected int maxHealth;
         protected int strength;
@@ -43,7 +43,7 @@ namespace Text_Based_RPG
         public void Draw()
         {
             if (dead) return;
-            render.ChangeSpace(character, ConsoleColor.Black, color, x, y);
+            render.ChangeSpace(character, GameManager.globals.CHARACTER_COLOUR, color, x, y);
 
             color = baseColor; // returns color to normal after attacking
         }
@@ -104,7 +104,7 @@ namespace Text_Based_RPG
             return true;
         }
 
-        protected virtual void Attack(int attackShape)
+        protected virtual void Attack(Globals.AttackShape attackShape)
         {
             if (name != "Lava")
                 GameManager.playerUI.AddEvent(name + " attacked!");
@@ -133,12 +133,12 @@ namespace Text_Based_RPG
             dead = true;
         }
 
-        public int GetAttackShape()
+        public Globals.AttackShape GetAttackShape()
         {
             return attackShape;
         }
 
-        public void ChangeAttackShape(int newShape)
+        public void ChangeAttackShape(Globals.AttackShape newShape)
         {
             attackShape = newShape;
         }

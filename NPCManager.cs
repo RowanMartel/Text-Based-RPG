@@ -25,7 +25,7 @@ namespace Text_Based_RPG
             this.map = map;
             this.itemManager = itemManager;
 
-            string[] mapString = File.ReadAllLines("NPCs.txt");
+            string[] mapString = File.ReadAllLines("maps/NPCs.txt");
             npcMap = new char[mapString.GetLength(0), mapString[0].Length];
 
             for (int i = 0; i < mapString.GetLength(0); i++)

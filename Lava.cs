@@ -15,14 +15,10 @@ namespace Text_Based_RPG
             moveAt = GameManager.globals.LAVA_MOVEAT;
             character = GameManager.globals.LAVA_CHAR;
             strength = GameManager.globals.LAVA_STRENGTH;
-            attackShape = GameManager.globals.RING_ATTACK;
+            attackShape = GameManager.globals.LAVA_ATTACK_SHAPE;
+            AI = GameManager.globals.LAVA_AI;
             this.Type = type;
             name = type.ToString();
-        }
-
-        protected override void MoveAI()
-        {
-            Attack(attackShape);
         }
     }
 }

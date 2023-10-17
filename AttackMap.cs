@@ -27,7 +27,7 @@ namespace Text_Based_RPG
             attacks = new Attack[map.map.GetLength(0), map.map.GetLength(1)];
         }
 
-        public void AddAttack(int x, int y, int strength, int attackShape, string source)
+        public void AddAttack(int x, int y, int strength, Globals.AttackShape attackShape, string source)
         {
             Attack currentAttack = new Attack();
             currentAttack.strength = strength;
@@ -36,19 +36,19 @@ namespace Text_Based_RPG
 
             switch (attackShape)
             {
-                case var _ when attackShape == GameManager.globals.CROSS_ATTACK:
+                case var _ when attackShape == Globals.AttackShape.CrossAttack:
                     crossAttack(x, y, currentAttack);
                     break;
-                case var _ when attackShape == GameManager.globals.SPACE_ATTACK:
+                case var _ when attackShape == Globals.AttackShape.SpaceAttack:
                     spaceAttack(x, y, currentAttack);
                     break;
-                case var _ when attackShape == GameManager.globals.LONG_ATTACK:
+                case var _ when attackShape == Globals.AttackShape.LongAttack:
                     longAttack(x, y, currentAttack);
                     break;
-                case var _ when attackShape == GameManager.globals.RING_ATTACK:
+                case var _ when attackShape == Globals.AttackShape.RingAttack:
                     ringAttack(x, y, currentAttack);
                     break;
-                case var _ when attackShape == GameManager.globals.X_ATTACK:
+                case var _ when attackShape == Globals.AttackShape.XAttack:
                     xAttack(x, y, currentAttack);
                     break;
                 default:
@@ -85,7 +85,7 @@ namespace Text_Based_RPG
                 {
                     if (attacks[i, j].isAttack == true)
                     {
-                        render.ChangeSpace('.', ConsoleColor.DarkRed, ConsoleColor.DarkRed, j, i);
+                        render.ChangeSpace('.', GameManager.globals.ATTACK_COLOUR, GameManager.globals.ATTACK_COLOUR, j, i);
                     }
                 }
             } 
@@ -97,7 +97,7 @@ namespace Text_Based_RPG
             {
                 for (int j = 0; j < attacks.GetLength(1); j++)
                 {
-                    AddAttack(j, i, 0, GameManager.globals.SPACE_ATTACK, "bomb");
+                    AddAttack(j, i, 0, Globals.AttackShape.SpaceAttack, "bomb");
                 }
             }
         }

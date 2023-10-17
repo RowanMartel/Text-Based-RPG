@@ -15,42 +15,10 @@ namespace Text_Based_RPG
             moveAt = GameManager.globals.ELITE_MOVEAT;
             character = GameManager.globals.ELITE_CHAR;
             strength = GameManager.globals.ELITE_STRENGTH;
-            attackShape = GameManager.globals.LONG_ATTACK;
+            attackShape = GameManager.globals.ELITE_ATTACK_SHAPE;
+            AI = GameManager.globals.ELITE_AI;
             this.Type = type;
             name = type.ToString();
-        }
-
-        protected override void MoveAI()
-        {
-            // attack the player
-            int[] playerPos = GameManager.GetPlayerPos();
-            if (
-                ((Math.Abs(playerPos[0] - x) == 0) && (Math.Abs(playerPos[1] - y) == 1)) || 
-                ((Math.Abs(playerPos[0] - x) == 1) && (Math.Abs(playerPos[1] - y) == 0)) ||
-                ((Math.Abs(playerPos[0] - x) == 0) && (Math.Abs(playerPos[1] - y) == 2)) ||
-                ((Math.Abs(playerPos[0] - x) == 2) && (Math.Abs(playerPos[1] - y) == 0)))
-            {
-                Attack(attackShape);
-                return;
-            }
-
-            // or move
-            switch (Globals.random.Next(4))
-            {
-                case 0:
-                    yDelta--;
-                    break;
-                case 1:
-                    xDelta--;
-                    break;
-                case 2:
-                    yDelta++;
-                    break;
-                case 3:
-                    xDelta++;
-                    break;
-            }
-            Move();
         }
     }
 }

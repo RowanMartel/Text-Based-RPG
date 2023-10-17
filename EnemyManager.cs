@@ -82,7 +82,7 @@ namespace Text_Based_RPG
 
         public void InitEnemies()
         {
-            string[] mapString = File.ReadAllLines("Enemies.txt");
+            string[] mapString = File.ReadAllLines("maps/Enemies.txt");
             char[,] enemyMap = new char[mapString.GetLength(0), mapString[0].Length];
 
             for (int i = 0; i < mapString.GetLength(0); i++)

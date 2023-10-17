@@ -60,7 +60,7 @@ namespace Text_Based_RPG
         {
             if (collected || hidden)
                 return;
-            render.ChangeSpace(character, ConsoleColor.Black, color, x, y);
+            render.ChangeSpace(character, GameManager.globals.ITEM_BG_COLOUR, color, x, y);
         }
 
         public void Update()
@@ -132,10 +132,10 @@ namespace Text_Based_RPG
                     player.Heal(GameManager.globals.HEAL_LARGE);
                     break;
                 case ItemTypeClass.ItemType.Spear:
-                    player.ChangeAttackShape(GameManager.globals.LONG_ATTACK);
+                    player.ChangeAttackShape(GameManager.globals.SPEAR_ATTACK_SHAPE);
                     break;
                 case ItemTypeClass.ItemType.HulaHoop:
-                    player.ChangeAttackShape(GameManager.globals.RING_ATTACK);
+                    player.ChangeAttackShape(GameManager.globals.HULA_ATTACK_SHAPE);
                     break;
                 case ItemTypeClass.ItemType.Bomb:
                     GameManager.enemyManager.Bomb();

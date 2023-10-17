@@ -16,7 +16,7 @@ namespace Text_Based_RPG
         public NPC(int x, int y, Map map, AttackMap attackMap, Render render) : base(x, y, map, attackMap, render)
         {
             moveCharge = 0;
-            color = ConsoleColor.Green;
+            color = GameManager.globals.NPC_COLOUR;
             baseColor = color;
         }
 

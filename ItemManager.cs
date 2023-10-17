@@ -49,7 +49,7 @@ namespace Text_Based_RPG
 
         public void InitItems()
         {
-            string[] mapString = File.ReadAllLines("Items.txt");
+            string[] mapString = File.ReadAllLines("maps/Items.txt");
             char[,] itemMap = new char[mapString.GetLength(0), mapString[0].Length];
 
             for (int i = 0; i < mapString.GetLength(0); i++)

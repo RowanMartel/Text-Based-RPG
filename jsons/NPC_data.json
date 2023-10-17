@@ -1,0 +1,16 @@
+{
+	"SHOP_CHAR": "$",
+	"GAMBLER_CHAR": "¢",
+	"QUEST_CHAR": "?",
+	"FISHERMAN_CHAR": "F",
+	"MAYOR_CHAR": "M",
+	"SOLDIER_CHAR": "A",
+	"HERMIT_CHAR": "H",
+	"GRASSGUY_CHAR": "G",
+	"SANDGUY_CHAR": "S",
+	"DOCKGUY_CHAR": "D",
+	"SIGN_CHAR": "P",
+	"JOURNAL_CHAR": "J",
+
+	"NPC_COLOUR_STR": "Green"
+}
