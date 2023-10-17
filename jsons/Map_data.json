@@ -1,11 +1,11 @@
 {
 	"MAP_GRASS": "`",
-	"MAP_WATER": "~",
+	"MAP_WATER": "`",
 	"MAP_MOUNTAIN": "^",
 	"MAP_FOREST": "*",
 	"MAP_SAND": "\"",
 	"MAP_WOOD": "=",
-	"MAP_WALL": "▓",
+	"MAP_WALL": "☺",
 	"MAP_HOLE": "n",
 	"MAP_HOLE_FALSE": "f",
 	"MAP_SHOP": "x",
@@ -23,15 +23,15 @@
 	"SHOP_COLOUR_FG_STR": "Black",
 	"SHOP_RESTOCKING_COLOUR_FG_STR": "Black",
 
-	"GRASS_COLOUR_BG_STR": "Green",
-	"WATER_COLOUR_BG_STR": "Blue",
+	"GRASS_COLOUR_BG_STR": "Black",
+	"WATER_COLOUR_BG_STR": "Green",
 	"MOUNTAIN_COLOUR_BG_STR": "DarkGray",
 	"FOREST_COLOUR_BG_STR": "DarkGreen",
-	"SAND_COLOUR_BG_STR": "Yellow",
-	"WOOD_COLOUR_BG_STR": "DarkYellow",
+	"SAND_COLOUR_BG_STR": "Blue",
+	"WOOD_COLOUR_BG_STR": "Green",
 	"WALL_COLOUR_BG_STR": "Black",
-	"HOLE_COLOUR_BG_STR": "Black",
-	"HOLE_FALSE_COLOUR_BG_STR": "Black",
+	"HOLE_COLOUR_BG_STR": "Yellow",
+	"HOLE_FALSE_COLOUR_BG_STR": "Magenta",
 	"SHOP_COLOUR_BG_STR": "DarkYellow",
-	"SHOP_RESTOCKING_COLOUR_BG_STR": "DarkYellow"
+	"SHOP_RESTOCKING_COLOUR_BG_STR": "DarkRed"
 }
