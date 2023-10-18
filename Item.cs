@@ -71,9 +71,9 @@ namespace Text_Based_RPG
                 if (attackMap.PlayerAttackCheck(x, y))
                     switch (map.GetChar(x, y))
                     {
-                        case 'x':
+                        case var _ when map.GetChar(x, y) == GameManager.globals.MAP_SHOP:
                             Collect(ShopState.NonRestock); return;
-                        case 'r':
+                        case var _ when map.GetChar(x, y) == GameManager.globals.MAP_SHOP_RESTOCKING:
                             Collect(ShopState.Restocks); return;
                         default:
                             Collect(ShopState.Field); break;

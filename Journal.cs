@@ -15,7 +15,7 @@ namespace Text_Based_RPG
             dialogueCycle = 0;
             character = GameManager.globals.JOURNAL_CHAR;
             this.Type = type;
-            name = "Journal";
+            name = GameManager.globals.JOURNAL_NAME;
         }
         public override void Interact()
         {

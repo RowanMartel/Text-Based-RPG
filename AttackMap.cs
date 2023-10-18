@@ -97,7 +97,7 @@ namespace Text_Based_RPG
             {
                 for (int j = 0; j < attacks.GetLength(1); j++)
                 {
-                    AddAttack(j, i, 0, Globals.AttackShape.SpaceAttack, "bomb");
+                    AddAttack(j, i, 0, Globals.AttackShape.SpaceAttack, GameManager.globals.BOMB_NAME);
                 }
             }
         }

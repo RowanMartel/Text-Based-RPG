@@ -1,6 +1,6 @@
 {
 	"MAP_GRASS": "`",
-	"MAP_WATER": "`",
+	"MAP_WATER": "/",
 	"MAP_MOUNTAIN": "^",
 	"MAP_FOREST": "*",
 	"MAP_SAND": "\"",
